@@ -6,47 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical"
-    android:layout_margin="20dp">
+    android:layout_marginBottom="25dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="20dp"
+    android:gravity="center"
+    android:layout_gravity="center">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight=".7"
+        android:src="@drawable/icono"
+        android:layout_gravity="center"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight=".7"
         android:text="GAMENEWS"
         android:textSize="30sp"
-        android:gravity="center"
-        android:layout_margin="40dp"/>
+        android:gravity="center"/>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
         android:text="@string/text_usuario"
         android:textSize="20sp"
-        android:layout_marginLeft="5dp"/>
+        android:gravity="center"/>
     <EditText
         android:id="@+id/edit_user"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
         android:hint="@string/text_usuario"
-        android:padding="10dp"/>
+        android:paddingLeft="10dp"
+        android:gravity="center"/>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
         android:text="@string/text_contrasena"
         android:textSize="20sp"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="5dp"/>
-
+        android:gravity="center"/>
     <EditText
         android:id="@+id/edit_pass"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
         android:hint="@string/text_contrasena"
         android:inputType="textPassword"
-        android:padding="10dp"/>
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"/>
     <Button
         android:id="@+id/btn_entrar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
         android:text="@string/text_iniciar_registrar"
-        android:layout_gravity="center"
-        android:layout_margin="15dp" />
+        android:layout_margin="15dp"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

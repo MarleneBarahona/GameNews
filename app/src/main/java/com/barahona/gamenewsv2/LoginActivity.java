@@ -11,6 +11,7 @@ public class LoginActivity extends AppCompatActivity {
 
     Button entrar;
     EditText user, pass;
+    public EditText username_perfil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +23,15 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                username_perfil = (EditText) user.getText();
             }
         });
     }
 
     public void botonEntrar(){
-        entrar = findViewById(R.id.btn_entrar);
-        user = findViewById(R.id.edit_user);
-        pass= findViewById(R.id.edit_pass);
+        entrar = (Button) findViewById(R.id.btn_entrar);
+        user = (EditText) findViewById(R.id.edit_user);
+        pass = (EditText) findViewById(R.id.edit_pass);
+        //username_perfil = findViewById();
     }
 }
