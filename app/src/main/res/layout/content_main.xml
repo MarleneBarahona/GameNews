@@ -9,35 +9,12 @@
     tools:showIn="@layout/app_bar_main"
     android:layout_marginTop="10dp">
 
-    <RelativeLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintVertical_weight="1"
-        android:layout_margin="10dp"
-        android:clickable="true"
-        android:background="#B2EBF2">
-        <ImageView
-            android:id="@+id/img_noticia1"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/gravity_rush"/>
-        <TextView
-            android:id="@+id/titulo_noticia1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Titulo noticia"
-            android:layout_margin="10dp"
-            android:layout_alignBottom="@id/img_noticia1"
-            android:textSize="18sp"/>
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginRight="10dp"
-            android:layout_alignTop="@id/img_noticia1"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/estrella_gris"/>
-    </RelativeLayout>
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>
 
 </android.support.constraint.ConstraintLayout>

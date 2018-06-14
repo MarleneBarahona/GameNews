@@ -39,7 +39,7 @@
         android:layout_weight=".5"
         android:hint="@string/text_usuario"
         android:paddingLeft="10dp"
-        android:gravity="center"/>
+        android:gravity="center" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"

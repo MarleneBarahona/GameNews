@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:background="#B2EBF2">
+
+        <ImageView
+            android:id="@+id/img_noticia1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gravity_rush"/>
+        <TextView
+            android:id="@+id/titulo_noticia1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titulo noticia"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignBottom="@id/img_noticia1"
+            android:textSize="18sp"
+            android:background="#B2EBF2"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignTop="@id/img_noticia1"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/estrella_gris"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
