@@ -6,6 +6,7 @@ import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 @Entity
 public class User {
@@ -20,18 +21,16 @@ public class User {
     private String password;
 
     @ColumnInfo(name = "fav")
-    private Array[] fav;
+    private ArrayList<String> fav = new ArrayList<>();
 
 
-    //incluyendo fav
-    public User(int id_user, String username, String password, Array fav) {
+    public User(int id_user, String username, String password, ArrayList<String> fav) {
         this.id_user = id_user;
         this.username = username;
         this.password = password;
-        //this.fav = fav;
+        this.fav.addAll(fav);
     }
 
-    @NonNull
     public int getId_user() {
         return id_user;
     }
@@ -56,4 +55,11 @@ public class User {
         this.password = password;
     }
 
+    public ArrayList<String> getFav() {
+        return fav;
+    }
+
+    public void setFav(ArrayList<String> fav) {
+        this.fav = fav;
+    }
 }
