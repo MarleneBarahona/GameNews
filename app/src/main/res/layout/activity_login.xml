@@ -8,7 +8,8 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:scrollbars="horizontal">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -36,7 +37,8 @@
         android:layout_weight=".5"
         android:hint="@string/text_usuario"
         android:paddingLeft="10dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:singleLine="true"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -54,7 +56,8 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:layout_marginBottom="10dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:singleLine="true"/>
     <Button
         android:id="@+id/btn_entrar"
         android:layout_width="wrap_content"

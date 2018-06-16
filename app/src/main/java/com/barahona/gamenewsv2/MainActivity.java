@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity
         myrv.setLayoutManager(new GridLayoutManager(this,1));
         rvadapter = new RecyclerAdapter(this, List);
         myrv.setAdapter(rvadapter);
+        myrv.setHasFixedSize(true);
     }
 
     @Override

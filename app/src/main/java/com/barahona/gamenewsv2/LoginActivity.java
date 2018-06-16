@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -21,10 +22,18 @@ public class LoginActivity extends AppCompatActivity {
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                //intentando algo raro
-                //username_perfil = (EditText) user.getText();
+                boolean espacio = false;
+                for (int i = 0; i < user.length(); i++) {
+                    if (user.getText().toString().charAt(i) == ' ') {
+                        espacio = true;
+                        Toast.makeText(getApplicationContext(), "Los espacios no son validos en estos campos", Toast.LENGTH_LONG).show();
+                    }}
+                if((!user.getText().toString().isEmpty()) && (!pass.getText().toString().isEmpty()) && !espacio){
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(getApplicationContext(), "Completar los campos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
