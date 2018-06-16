@@ -3,6 +3,9 @@ package com.barahona.gamenewsv2;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,15 +15,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    List<Noticia> List;
+    RecyclerView myrv;
+    RecyclerView.Adapter rvadapter;
+    LinearLayoutManager lm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //EditText username = findViewById(R.id.id_username_perfil);
@@ -43,6 +53,49 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        List = new ArrayList<>();
+
+        myrv = findViewById(R.id.recycler);
+
+        //agregando quemados para observar si el diseño es correcto
+
+        List.add(new Noticia(null,"NOTICIAS PIYU",null));
+        List.add(new Noticia(null,"OTRA NOTICIA PYU",null));
+        List.add(new Noticia(null,"OLA WENAS",null));
+        List.add(new Noticia(null,"PUTOELQUELOLEA",null));
+        List.add(new Noticia(null,"NOTICIAS DOTA",null));
+        List.add(new Noticia(null,"NOTICIAS CSGO",null));
+
+        //6 Espacios para las cardview
+        /*GridLayoutManager gridLayoutManager = new GridLayoutManager(this,6);
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+
+                //Switch para repartir los espacios
+                switch (position % 3){
+
+                    //El primer cardview tomará los 6 espacios
+                    case 0:
+                        return 6;
+                    //Las siguientes 2 cardview tomarán 3 y 3 para completar los 6 espacios
+                    //de manera que quedarán juntas
+                    case 1:
+                    case 2:
+                        return 3;
+
+                }
+
+                throw new IllegalStateException("Error");
+
+            }
+        });*/
+
+        //seteando recycler en adapter
+        myrv.setLayoutManager(new GridLayoutManager(this,1));
+        rvadapter = new RecyclerAdapter(this, List);
+        myrv.setAdapter(rvadapter);
     }
 
     @Override

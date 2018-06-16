@@ -25,16 +25,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Adapte
 
     @NonNull
     @Override
-    public RecyclerAdapter.AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         LayoutInflater inflater = LayoutInflater.from(context);
         view = inflater.inflate(R.layout.nosexd, parent, false);
-        return null;
+        return new AdapterViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.AdapterViewHolder holder, int position) {
-
+        holder.titulo_noticia.setText(data.get(position).getTitle());
     }
 
     @Override

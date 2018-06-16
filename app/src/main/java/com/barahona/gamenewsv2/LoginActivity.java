@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 //intentando algo raro
-                username_perfil = (EditText) user.getText();
+                //username_perfil = (EditText) user.getText();
             }
         });
     }
