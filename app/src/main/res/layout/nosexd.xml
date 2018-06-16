@@ -3,18 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="4dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_margin="10dp"
         android:background="#B2EBF2">
 
         <ImageView
             android:id="@+id/img_noticia1"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_margin="10dp"
+            android:layout_margin="8dp"
             android:src="@drawable/gravity_rush"
             android:scaleType="centerCrop"/>
         <TextView
@@ -22,10 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Titulo noticia"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_alignBottom="@id/img_noticia1"
-            android:textSize="18sp"
             android:background="#B2EBF2"/>
 
         <ImageButton

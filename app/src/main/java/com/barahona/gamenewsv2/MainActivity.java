@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity
         List.add(new Noticia(null,"NOTICIAS CSGO",null));
 
         //6 Espacios para las cardview
-        /*GridLayoutManager gridLayoutManager = new GridLayoutManager(this,6);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,6);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
@@ -82,18 +82,19 @@ public class MainActivity extends AppCompatActivity
                     //Las siguientes 2 cardview tomarán 3 y 3 para completar los 6 espacios
                     //de manera que quedarán juntas
                     case 1:
+                        return 4;
                     case 2:
-                        return 3;
+                        return 2;
 
                 }
 
                 throw new IllegalStateException("Error");
 
             }
-        });*/
+        });
 
         //seteando recycler en adapter
-        myrv.setLayoutManager(new GridLayoutManager(this,1));
+        myrv.setLayoutManager(gridLayoutManager);
         rvadapter = new RecyclerAdapter(this, List);
         myrv.setAdapter(rvadapter);
         myrv.setHasFixedSize(true);
