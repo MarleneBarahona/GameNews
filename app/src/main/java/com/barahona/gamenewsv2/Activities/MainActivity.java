@@ -1,5 +1,8 @@
 package com.barahona.gamenewsv2.Activities;
 
+import android.app.Fragment;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,7 +20,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.barahona.gamenewsv2.CSGO;
+import com.barahona.gamenewsv2.Dota;
+import com.barahona.gamenewsv2.LOL;
 import com.barahona.gamenewsv2.Noticia;
+import com.barahona.gamenewsv2.Noticias;
 import com.barahona.gamenewsv2.R;
 import com.barahona.gamenewsv2.RecyclerAdapter;
 
@@ -25,12 +32,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, Noticias.OnFragmentInteractionListener, CSGO.OnFragmentInteractionListener, LOL.OnFragmentInteractionListener, Dota.OnFragmentInteractionListener {
 
     List<Noticia> List;
     RecyclerView myrv;
     RecyclerView.Adapter rvadapter;
     LinearLayoutManager lm;
+    boolean fragmentoSeleccionado = false;
+    android.support.v4.app.Fragment miFragment = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,13 +153,21 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        fragmentoSeleccionado = true;
         if (id == R.id.nav_noticia) {
-            // Handle the camera action
+            miFragment = new Noticias();
+            fragmentoSeleccionado = true;
         } else if (id == R.id.nav_favs) {
 
-        } else if (id == R.id.nav_juegos) {
-
+        } else if (id == R.id.nav_CSGO) {
+            miFragment = new CSGO();
+            fragmentoSeleccionado = true;
+        } else if (id == R.id.nav_LOL) {
+            miFragment = new LOL();
+            fragmentoSeleccionado = true;
+        } else if (id == R.id.nav_Dota) {
+            miFragment = new Dota();
+            fragmentoSeleccionado = true;
         } else if (id == R.id.nav_config) {
 
         } else if (id == R.id.nav_share) {
@@ -157,6 +176,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_cerrarsesion) {
             Toast.makeText(getApplicationContext(), "se ha cerrado la sesion",Toast.LENGTH_SHORT).show();
+        }
+        if(fragmentoSeleccionado){
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main_id, miFragment).commit();
         }
 
         //EditText username = findViewById(R.id.edit_user);
@@ -167,4 +189,13 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
 }

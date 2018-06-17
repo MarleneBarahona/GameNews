@@ -15,14 +15,22 @@
         <item
             android:id="@+id/nav_juegos"
             android:icon="@drawable/icono_menu_juegos"
-            android:title="Juegos" />
-        <item
-            android:id="@+id/nav_config"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Configuracion" />
+            android:title="Juegos">
+            <menu>
+                <item
+                    android:id="@+id/nav_CSGO"
+                    android:title="CSGO"/>
+                <item
+                    android:id="@+id/nav_LOL"
+                    android:title="LOL"/>
+                <item
+                    android:id="@+id/nav_Dota"
+                    android:title="Dota"/>
+            </menu>
+        </item>
     </group>
 
-    <item android:title="Communicate">
+        <item android:title="Cuenta">
         <menu>
             <item
                 android:id="@+id/nav_share"
@@ -32,6 +40,10 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Send" />
+            <item
+                android:id="@+id/nav_config"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Configuracion" />
             <item
                 android:id="@+id/nav_cerrarsesion"
                 android:title="Cerrar sesion" />
