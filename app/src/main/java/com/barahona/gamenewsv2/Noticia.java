@@ -5,18 +5,18 @@ import java.util.ArrayList;
 public class Noticia {
     private String title;
     private ArrayList<Noticia> favorite;
-    private String img;
+    private int img;
 
-    public Noticia(String img, String title, ArrayList<Noticia> favorite) {
+    public Noticia(int img, String title, ArrayList<Noticia> favorite) {
         this.img = img;
         this.title = title;
         this.favorite = favorite;
     }
 
-    public String getImg() {
+    public int getImg() {
         return img;
     }
-    public void setImg(String img) {
+    public void setImg(int img) {
         this.img = img;
     }
 

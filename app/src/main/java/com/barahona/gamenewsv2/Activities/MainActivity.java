@@ -74,31 +74,28 @@ public class MainActivity extends AppCompatActivity
 
         myrv = findViewById(R.id.recycler);
 
-        //agregando quemados para observar si el diseño es correcto
+        List.add(new Noticia(R.drawable.icono,"Noticia CSGO",null));
+        List.add(new Noticia(R.drawable.icono,"Noticia LOL",null));
+        List.add(new Noticia(R.drawable.icono,"Noticia Dota",null));
+        List.add(new Noticia(R.drawable.icono,"Noticia LOL",null));
+        List.add(new Noticia(R.drawable.gravity_rush,"Noticia CSGO",null));
+        List.add(new Noticia(R.drawable.icono,"Noticia Dota",null));
 
-        List.add(new Noticia(null,"NOTICIAS PIYU",null));
-        List.add(new Noticia(null,"OTRA NOTICIA PYU",null));
-        List.add(new Noticia(null,"OLA WENAS",null));
-        List.add(new Noticia(null,"PUTOELQUELOLEA",null));
-        List.add(new Noticia(null,"NOTICIAS DOTA",null));
-        List.add(new Noticia(null,"NOTICIAS CSGO",null));
-
-        //6 Espacios para las cardview
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,6);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
 
-                //Switch para repartir los espacios
+                //Distribuyendo los espacios
                 switch (position % 3){
 
-                    //El primer cardview tomará los 6 espacios
+                    //Primer cardview
                     case 0:
                         return 6;
-                    //Las siguientes 2 cardview tomarán 3 y 3 para completar los 6 espacios
-                    //de manera que quedarán juntas
+                    //Segundo cardview
                     case 1:
                         return 4;
+                    //Tercer cardview
                     case 2:
                         return 2;
 

@@ -20,7 +20,6 @@
                 android:layout_height="0dp"
                 android:layout_weight="4"
                 android:layout_margin="8dp"
-                android:src="@drawable/gravity_rush"
                 android:scaleType="centerCrop"/>
             <TextView
                 android:id="@+id/titulo_noticia1"
