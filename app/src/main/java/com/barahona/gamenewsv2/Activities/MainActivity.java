@@ -1,4 +1,4 @@
-package com.barahona.gamenewsv2;
+package com.barahona.gamenewsv2.Activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,6 +16,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.barahona.gamenewsv2.Noticia;
+import com.barahona.gamenewsv2.R;
+import com.barahona.gamenewsv2.RecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
