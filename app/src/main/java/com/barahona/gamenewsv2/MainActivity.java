@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,18 +139,20 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_noticia) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_favs) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_juegos) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_config) {
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.nav_cerrarsesion) {
+            Toast.makeText(getApplicationContext(), "se ha cerrado la sesion",Toast.LENGTH_SHORT).show();
         }
 
         //EditText username = findViewById(R.id.edit_user);
@@ -159,4 +162,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
